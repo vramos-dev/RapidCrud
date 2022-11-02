@@ -37,6 +37,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidCrud.GatewayAccess.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidCrud.GatewayAccess.Implementation", "RapidCrud.GatewayAccess.Implementation\RapidCrud.GatewayAccess.Implementation.csproj", "{43420AA5-C6AB-41A0-AA78-08A82A0AD00E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60.DataBaseScripts", "60.DataBaseScripts", "{2D075EE2-1F2A-4FDB-84C8-35D8AF656D9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{11DF2724-EB39-4C12-A116-5FF576A648BB}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Create DataBase Rapid.sql = Scripts\Create DataBase Rapid.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StoreProcedures", "StoreProcedures", "{8E96CE5B-0018-4C5A-9ED5-3C166E9791D8}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\dbo.uspClienteDelete.StoredProcedure.sql = Scripts\dbo.uspClienteDelete.StoredProcedure.sql
+		Scripts\dbo.uspClienteGetOne.StoredProcedure.sql = Scripts\dbo.uspClienteGetOne.StoredProcedure.sql
+		Scripts\dbo.uspClienteInsert.StoredProcedure.sql = Scripts\dbo.uspClienteInsert.StoredProcedure.sql
+		Scripts\dbo.uspClienteListAll.StoredProcedure.sql = Scripts\dbo.uspClienteListAll.StoredProcedure.sql
+		Scripts\dbo.uspClienteUpdate.StoredProcedure.sql = Scripts\dbo.uspClienteUpdate.StoredProcedure.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{FFDE3492-5254-4264-B2C9-CFA334D994B7}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\dbo.Cliente.Table.sql = Scripts\dbo.Cliente.Table.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,9 +124,12 @@ Global
 		{35A449CF-315C-4384-8FED-F3FADA69D62B} = {7B4241C0-868F-41E7-A0D6-92926E262643}
 		{30AAB91F-2071-45DC-870D-FC6286E42A91} = {B1D8EFC9-DB47-4993-B2D8-B99E9B39797E}
 		{43420AA5-C6AB-41A0-AA78-08A82A0AD00E} = {B1D8EFC9-DB47-4993-B2D8-B99E9B39797E}
+		{11DF2724-EB39-4C12-A116-5FF576A648BB} = {2D075EE2-1F2A-4FDB-84C8-35D8AF656D9B}
+		{8E96CE5B-0018-4C5A-9ED5-3C166E9791D8} = {2D075EE2-1F2A-4FDB-84C8-35D8AF656D9B}
+		{FFDE3492-5254-4264-B2C9-CFA334D994B7} = {2D075EE2-1F2A-4FDB-84C8-35D8AF656D9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 		SolutionGuid = {69CEB49C-9884-4341-B365-306DE93C07B3}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal
