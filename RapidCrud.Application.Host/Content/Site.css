@@ -1,0 +1,262 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+textarea.cell-text-long {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none; /*remove the resize handle on the bottom right*/
+}
+
+@media (min-width: 768px) {
+    .modal-xlg {
+        width: 90%;
+    }
+}
+
+span.disabled {
+    cursor: not-allowed !important;
+    opacity: .65
+}
+
+label.badge-asterisk:before,
+span.badge-asterisk:before {
+    content: '*';
+    float: left;
+    font-size: larger;
+    color: #c11c11 !important;
+}
+
+/*** INICIO: loading-bar ***/
+#rapid-loading-bar {
+    pointer-events: none;
+    -webkit-pointer-events: none;
+    -webkit-transition: 350ms linear all;
+    -moz-transition: 350ms linear all;
+    -o-transition: 350ms linear all;
+    transition: 350ms linear all;
+}
+
+    #rapid-loading-bar .bar {
+        -webkit-transition: width 350ms;
+        -moz-transition: width 350ms;
+        -o-transition: width 350ms;
+        transition: width 350ms;
+        background: #69bb4d;
+        position: fixed;
+        z-index: 10002;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        border-bottom-right-radius: 1px;
+        border-top-right-radius: 1px;
+    }
+
+    #rapid-loading-bar .peg {
+        position: absolute;
+        width: 80px;
+        right: 0;
+        top: 0;
+        height: 2px;
+        opacity: .75;
+        -moz-box-shadow: #29d 1px 0 6px 1px;
+        -ms-box-shadow: #29d 1px 0 6px 1px;
+        -webkit-box-shadow: #29d 1px 0 6px 1px;
+        box-shadow: #29d 1px 0 6px 1px;
+        -moz-border-radius: 100%;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+    }
+
+        #rapid-loading-bar .peg.move {
+            animation: rapid-peg-moving 3s infinite;
+            -webkit-animation: rapid-peg-moving 3s infinite;
+            -moz-animation: rapid-peg-moving 3s infinite;
+            -o-animation: rapid-peg-moving 3s infinite;
+        }
+
+@keyframes rapid-peg-moving {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: calc(100% - 80px);
+    }
+}
+
+@-webkit-keyframes rapid-peg-moving {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: calc(100% - 80px);
+    }
+}
+
+@-moz-keyframes rapid-peg-moving {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: calc(100% - 80px);
+    }
+}
+
+@-o-keyframes rapid-peg-moving {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: calc(100% - 80px);
+    }
+}
+/*** FIN: loading-bar ***/
+
+
+@media (min-width: 768px) {
+    .divisor-vertital {
+        border-left: solid #ccc 1px
+    }
+}
+
+.rapid-scroll-top-table {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 20px;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+}
+
+    .rapid-scroll-top-table > div {
+        overflow: hidden;
+        height: 20px;
+    }
+
+table .checkbox {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+button.auto-generate-byprop {
+    margin-left: 1em;
+}
+
+label.truncate {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+    /* resize: horizontal; */
+    font-weight: normal;
+    line-height: 1;
+}
+
+.sbrapid-report .bootstrap-table .table > thead > tr > th,
+.sbrapid-report .bootstrap-table .table > tbody > tr > th,
+.sbrapid-report .bootstrap-table .table > tfoot > tr > th,
+.sbrapid-report .bootstrap-table .table > thead > tr > td,
+.sbrapid-report .bootstrap-table .table > tbody > tr > td,
+.sbrapid-report .bootstrap-table .table > tfoot > tr > td {
+    font-size: 12px;
+    padding: 2px;
+}
+
+/*.sbrapid-report .bootstrap-table .fixed-table-container .table thead th .th-inner {
+    padding: 2px !important;
+    white-space: normal !important;
+}*/
+
+.smphe-green {
+    background: #e8ffe6;
+    color: #0000aa;
+}
+
+.smphe-amber {
+    background: #ffffc8;
+    color: #0000aa;
+}
+
+.smphe-red {
+    background: #ffc3c3;
+    color: #3b0000;
+}
+
+.smphe-excep {
+    background: #f2f2f2;
+    color: black;
+}
+
+    .smphe-green label,
+    .smphe-green span,
+    .smphe-green a,
+    .smphe-amber label,
+    .smphe-amber span,
+    .smphe-amber a,
+    .smphe-red label,
+    .smphe-red span,
+    .smphe-red a,
+    .smphe-excep label,
+    .smphe-excep span,
+    .smphe-excep a {
+        color: inherit;
+    }
+
+.sbrapid-report .bootstrap-table .table > thead > tr > th.smphe-green,
+.sbrapid-report .bootstrap-table .table > thead > tr > td.smphe-green {
+    /*color: transparent;*/
+}
+
+.sbrapid-report .bootstrap-table .table > thead > tr > th.smphe-amber,
+.sbrapid-report .bootstrap-table .table > thead > tr > td.smphe-amber {
+    /*color: transparent;*/
+}
+
+.sbrapid-report .bootstrap-table .table > thead > tr > th.smphe-red,
+.sbrapid-report .bootstrap-table .table > thead > tr > td.smphe-red {
+    /*color: transparent;*/
+}
+
+.sbrapid-report .bootstrap-table .table > thead > tr > th.smphe-excep,
+.sbrapid-report .bootstrap-table .table > thead > tr > td.smphe-excep {
+    color: transparent;
+}
+
+.rapid-chart-container {
+    height: 100%;
+}
+
+.rapid-chart {
+    width: 100%;
+    height: 100%;
+    min-height: 25em !important;
+}

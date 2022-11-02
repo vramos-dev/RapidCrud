@@ -1,0 +1,118 @@
+﻿@using RapidCrud.Application.Host.Extensions;
+
+@{
+    ViewBag.Title = "Agenda";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section ScriptSrc
+{
+    @Scripts.RenderFormat("<script src='" + Url.BaseUriString() + "{0}'></script>", "~/bundles/agenda")
+}
+
+<div class="row" id="rapid-div-list-agenda" style="display:block;">
+    <div class="col-xs-12">        
+        <div class="row">
+            <div class="col-xs-12">
+                <button id="rapid-btn-add-agenda" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus text-primary" aria-hidden="true"></span>
+                    <span class="text-primary">Agregar nuevo cliente</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-9">
+                <table id="rapid-table-agenda"
+                       data-toggle="rapid-table-agenda"
+                       data-unique-id="Id">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" data-field="Id">Id</th>
+                            <th data-field="Dni">DNI</th>
+                            <th data-field="Nombre">Nombres</th>
+                            <th data-field="Apellido">Apellidos</th>
+                            <th class="hidden-xs" data-field="Telefono">Telefono</th>
+                            <th class="hidden-xs" data-field="Email">Email</th>
+                            <th data-field="tool" data-formatter="Agenda.fnToolsFormatter" data-halign="center" data-align="center" class="col-sm-1 text-nowrap"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="rapid-div-addedit-agenda" style="display:none;">
+    <div class="col-xs-12">        
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    <label class="badge-asterisk">DNI</label>
+                    <input type="text" class="form-control text-uppercase" id="rapid-agenda-dni" maxlength="8" data-group="agenda" data-validator="required;format-code" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    <label class="badge-asterisk">Nombres</label>
+                    <input type="text" class="form-control" id="rapid-agenda-nombre" maxlength="100" data-group="agenda" data-validator="required" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    <label class="badge-asterisk">Apellidos</label>
+                    <input type="text" class="form-control" id="rapid-agenda-apellido" maxlength="100" data-group="agenda" data-validator="required" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    <label class="badge-asterisk">Telefono</label>
+                    <input type="tel" class="form-control" id="rapid-agenda-telefono" maxlength="9" data-group="agenda" data-validator="required" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    <label class="badge-asterisk">Email</label>
+                    <input type="email" class="form-control" id="rapid-agenda-email" maxlength="100" data-group="agenda" data-validator="required" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3">
+                <button id="rapid-btn-save-agenda" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-floppy-disk text-primary" aria-hidden="true"></span>
+                    <span class="text-primary">Guardar cliente</span>
+                </button>
+            </div>
+            <div class="col-xs-6 col-sm-3 text-right">
+                <button id="rapid-btn-cancel-agenda" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                    <span class="">Cancelar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            //inicializar los js
+            Agenda.Init();
+        });
+    </script>
+}

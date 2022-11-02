@@ -1,0 +1,147 @@
+﻿@using RapidCrud.Application.Host.Extensions;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/sticky-header/bootstrap-table-sticky-header.css" rel="stylesheet">
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/fixed-columns/bootstrap-table-fixed-columns.min.css" rel="stylesheet">
+    @Styles.Render("~/Site/css")
+    @RenderSection("StyleHref", required: false)
+
+</head>
+<body class="form-rapid">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">RAPID</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Agenda", "Index", "Agenda", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>@ViewBag.Title</h2>
+                <hr />
+                <input type="hidden" id="form-hdn-url-domain" value="@Url.BaseUriString()" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                @RenderBody()
+            </div>
+        </div>
+
+        <!-- Modal Confirm -->
+        <div class="modal fade" id="rapid-model-delete-confirm" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Confirm Deletion</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <span id="rapid-span-text-confirm"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                <button id="rapid-btn-delete-confirm" type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-check text-primary" aria-hidden="true"></span>
+                                    <span class="text-primary">Confirm</span>
+                                </button>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/fixed-columns/bootstrap-table-fixed-columns.min.js"></script>
+
+    @RenderSection("ScriptSrc", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$("#hedaer-sla-seletec-setting-businesscode").change(function () {
+            //    sessionStorage.setItem("_bc_sla_", $("#hedaer-sla-seletec-setting-businesscode").val());
+            //    location.reload();
+            //});
+
+            //var businessCode = sessionStorage.getItem("_bc_sla_");
+            //if (businessCode != null && businessCode != "")
+            //    $("#hedaer-sla-seletec-setting-businesscode").val(businessCode);
+            //else
+            //    businessCode = $("#hedaer-sla-seletec-setting-businesscode").val();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-Setting-AppCode': "APP_RAPID"
+                }
+            });
+            $(document).ajaxStart(function () {
+                Util.LoadingBar.create();
+                Util.LoadingBar.move._start()
+            });
+            $(document).ajaxComplete(function () {
+                Util.LoadingBar.move._complete()
+            });
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,209 @@
+/**
+ * jQuery toast plugin created by Kamran Ahmed copyright MIT license 2014
+ * Modificado por VRamos
+ */
+.jq-toast-wrap {
+    display: block;
+    position: fixed;
+    width: 90%;
+    pointer-events: none !important;
+    margin: 0;
+    padding: 0;
+    letter-spacing: normal;
+    z-index: 9000 !important;
+}
+
+    .jq-toast-wrap * {
+        margin: 0;
+        padding: 0;
+    }
+
+@media (min-width: 768px) {
+    .jq-toast-wrap {
+        width: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .jq-toast-wrap {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .jq-toast-wrap {
+        width: 400px;
+    }
+}
+
+.jq-toast-wrap.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.jq-toast-wrap.bottom-right {
+    bottom: 20px;
+    right: 40px;
+}
+
+.jq-toast-wrap.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.jq-toast-wrap.top-right {
+    top: 20px;
+    right: 40px;
+}
+
+@media (max-width: 480px) {
+    .jq-toast-wrap.bottom-left,
+    .jq-toast-wrap.bottom-right,
+    .jq-toast-wrap.top-left,
+    .jq-toast-wrap.top-right {
+        left: 5% !important;
+        right: 0px;
+    }
+}
+
+.jq-toast-single {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0px 0px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: arial, sans-serif;
+    line-height: 17px;
+    position: relative;
+    pointer-events: all !important;
+    background-color: #444444;
+    color: white;
+}
+
+    .jq-toast-single h2 {
+        font-family: arial, sans-serif;
+        font-size: 14px;
+        margin: 0px 0px 7px;
+        background: none;
+        color: inherit;
+        line-height: inherit;
+        letter-spacing: normal;
+        font-weight: bold;
+    }
+
+    .jq-toast-single a {
+        color: #eee;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 1px solid white;
+        padding-bottom: 3px;
+        font-size: 12px;
+    }
+
+    .jq-toast-single ul {
+        margin: 0px 0px 0px 15px;
+        background: none;
+        padding: 0px;
+    }
+
+        .jq-toast-single ul li {
+            list-style-type: disc !important;
+            line-height: 17px;
+            background: none;
+            margin: 0;
+            padding: 0;
+            letter-spacing: normal;
+        }
+
+.close-jq-toast-single {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    -webkit-appearance: none;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .5;
+    color: inherit;
+    background: transparent;
+    border: 0;
+}
+
+    .close-jq-toast-single:hover,
+    .close-jq-toast-single:focus {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        filter: alpha(opacity=50);
+        opacity: 1;
+    }
+    
+.jq-toast-loader {
+    display: block;
+    position: absolute;
+    top: -2px;
+    height: 5px;
+    width: 0%;
+    left: 0;
+    border-radius: 5px;
+    background: red;
+}
+
+.jq-toast-loaded {
+    width: 100%;
+}
+
+.jq-has-icon {
+    padding: 10px 10px 10px 50px;
+}
+
+    .jq-has-icon:before {        
+        float: left;
+        margin: 10px 0px 0px -40px;
+        font-family: 'Glyphicons Halflings';
+        font-size: x-large;
+    }
+
+.jq-icon-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+    .jq-icon-info:before {
+        content: "\e086";
+    }
+
+.jq-icon-warning {    
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+    .jq-icon-warning:before {
+        content: "\e107";
+    }
+
+.jq-icon-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+    .jq-icon-error:before {
+        content: "\e209";
+    }
+
+.jq-icon-success {    
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+    .jq-icon-success:before {
+        content: "\e013";
+    }
