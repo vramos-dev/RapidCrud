@@ -14,5 +14,10 @@ namespace RapidCrud.Application.Host.Controllers
 
             return View();
         }
+
+        public string Test()
+        {
+            return "Test";
+        }
     }
 }
