@@ -19,5 +19,10 @@ namespace RapidCrud.Application.Host.Controllers
         {
             return "Test";
         }
+
+        public string TestLocalMerge()
+        {
+            return "Test Local merge";
+        }
     }
 }
