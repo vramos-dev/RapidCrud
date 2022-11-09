@@ -27,7 +27,7 @@ namespace RapidCrud.Application.Host.Controllers
 
         public string testmergeotrorepos()
         {
-            return "testmergeotrorepos";
+            return "testmergeotrorepos tes tetesttete ";
         }
     }
 }
